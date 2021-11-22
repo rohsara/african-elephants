@@ -25,13 +25,9 @@ const sync = async() => {
 
 app.get('/', async(req, res, next)=>{
     try{
-        const lastYear = totals.find((i, idx) => {
-            i === "Totals 2015"
-            
-            return idx+1;
-        })
-        console.log(lastYear);
-        res.send(lastYear)
+        const lastYear = totals.findIndex((i) => i === "Totals 2015")
+        console.log(totals[lastYear+1]);
+        res.send(totals[lastYear+1]);
     }
     catch(ex){
         next(ex);
