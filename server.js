@@ -25,9 +25,10 @@ const sync = async() => {
 
 app.get('/', async(req, res, next)=>{
     try{
-        const lastYear = totals.find(i => {
+        const lastYear = totals.find((i, idx) => {
             i === "Totals 2015"
-            return i + 1;
+            
+            return idx+1;
         })
         console.log(lastYear);
         res.send(lastYear)
