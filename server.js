@@ -25,7 +25,7 @@ const sync = async() => {
 
 app.get('/', async(req, res, next)=>{
     try{
-        const lastYear = totals.filter(i => {
+        const lastYear = totals.find(i => {
             i === "Totals 2015"
             return i + 1;
         })
